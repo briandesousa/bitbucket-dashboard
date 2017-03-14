@@ -1,3 +1,19 @@
 <h1>
   {{title}}
 </h1>
+<p>
+  {{instructions}}
+</p>
+
+<table>
+  <tr>
+    <th>Repository Name</th>
+    <th>Branch Count</th>
+    <th>Open Pull Request Count</th>
+  </tr>
+  <tr *ngFor="let repo of repositories">
+    <td>{{repo.name}}</td>
+    <td>{{repo.branchCount}}</td>
+    <td>{{repo.openPullRequestCount}}</td>
+  </tr>
+</table>
