@@ -1,19 +1,22 @@
 <h1>
   {{title}}
 </h1>
-<p>
-  {{instructions}}
-</p>
 
-<table>
-  <tr>
-    <th>Repository Name</th>
-    <th>Branch Count</th>
-    <th>Open Pull Request Count</th>
-  </tr>
-  <tr *ngFor="let repo of repositories">
-    <td>{{repo.name}}</td>
-    <td>{{repo.branchCount}}</td>
-    <td>{{repo.openPullRequestCount}}</td>
-  </tr>
-</table>
+<div>
+  <div>
+    <h2>Project at a Glance</h2>
+    <statistic value="278" statement="repositories"></statistic>
+    <statistic value="456" statement="open branches"></statistic>
+    <statistic value="123" statement="open pull requests"></statistic>
+  </div>
+
+  <div>
+    <h2>What's New This Week</h2>
+    <statistic value="0" statement="new repositories"></statistic>
+    <statistic value="12" statement="new branches created"></statistic>
+    <statistic value="1" statement="branch closed"></statistic>
+    <statistic value="34" statement="new pull requests created"></statistic>
+    <statistic value="4" statement="pull requests closed"></statistic>
+  </div>
+</div>
+
