@@ -5,13 +5,13 @@
 export class Repository {
 
     private _name: string;
-    private _url: string;
+    private _browseUrl: string;
     private _branchCount: number;
     private _openPullRequestCount: number;
 
-    constructor(name: string, url: string) {
+    constructor(name: string, browseUrl: string) {
         this.setName(name);
-        this.setUrl(url);
+        this.setBrowseUrl(browseUrl);
         this.setBranchCount(0);
         this.setOpenPullRequestCount(0);
     }
@@ -24,12 +24,12 @@ export class Repository {
         this._name = name;
     }
 
-    getUrl(): string {
-        return this._url;
+    getBrowseUrl(): string {
+        return this._browseUrl;
     }
 
-    setUrl(url: string): void {
-        this._url = url;
+    setBrowseUrl(browseUrl: string): void {
+        this._browseUrl = browseUrl;
     }
 
     getBranchCount(): number {

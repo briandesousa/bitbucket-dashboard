@@ -3,14 +3,14 @@
 </h1>
 
 <div>
-  <div>
+  <div style="float: left; width: 50%">
     <h2>Project at a Glance</h2>
     <bd-statistic value="278" statement="repositories"></bd-statistic>
     <bd-statistic value="456" statement="open branches"></bd-statistic>
     <bd-statistic value="123" statement="open pull requests"></bd-statistic>
   </div>
 
-  <div>
+  <div style="float: left; width: 50%">
     <h2>What's New This Week</h2>
     <bd-statistic value="0" statement="new repositories"></bd-statistic>
     <bd-statistic value="12" statement="new branches created"></bd-statistic>
@@ -18,5 +18,10 @@
     <bd-statistic value="34" statement="new pull requests created"></bd-statistic>
     <bd-statistic value="4" statement="pull requests closed"></bd-statistic>
   </div>
+</div>
+
+<div>
+  <h2>Repositories in {{projectName}}</h2>
+  <bd-repository-list project="{{projectName}}"></bd-repository-list>
 </div>
 

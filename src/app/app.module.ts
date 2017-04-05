@@ -6,11 +6,14 @@ import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { StatisticComponent } from './components/statistic/statistic.component';
+import { RepositoryListService } from './services/repository-list.service';
+import { RepositoryListComponent } from './components/repository-list/repository-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StatisticComponent
+    StatisticComponent,
+    RepositoryListComponent
   ],
   imports: [
     BrowserModule,
@@ -18,7 +21,9 @@ import { StatisticComponent } from './components/statistic/statistic.component';
     HttpModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [
+    RepositoryListService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
