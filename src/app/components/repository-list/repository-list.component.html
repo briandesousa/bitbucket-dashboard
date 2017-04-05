@@ -1,5 +1,5 @@
 <ul>
   <li *ngFor="let repo of getRepositories()">
-    {{repo.getName()}}
+    {{repo.getName()}}:{{repo.getBrowseUrl()}}
   </li>
 </ul>

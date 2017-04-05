@@ -1,23 +1,43 @@
 import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
 
 import { Repository } from '../model/repository';
 
 @Injectable()
 export class RepositoryListService {
 
-  constructor() { }
+  private _repositories: Repository[] = [];
 
-  getRepositoryList(projectName: string): Repository[] {
+  constructor(private http: Http) { }
+
+  getRepositoryList(projectName: string): Observable<Repository[]> {
+    const repoListUrl = `http://localhost:7990/rest/api/1.0/projects/${projectName}/repos`;
+
+    return this.http.get(repoListUrl)
+      .map(this.extractData)
+      .catch(this.handleError);
+  }
+
+  private extractData(response: Response) {
+    const body = response.json();
     const repositories: Repository[] = [];
 
-    // return mock data
-    const repo1: Repository = new Repository('C3', 'http://localhost:7990/projects/BBSALES/repos/c3/');
-    const repo2: Repository = new Repository('CoreAccount', 'http://localhost:7990/projects/BBSALES/repos/coreaccount');
+    console.log(body);
 
-    repositories.push(repo1);
-    repositories.push(repo2);
+    for(const repo of body.values) {
+      repositories.push(new Repository(repo.slug, repo.links.clone[1].href));
+    }
 
-    return repositories;
+    return repositories || { };
+  }
+
+  private handleError(error: Response | any) {
+    console.log(error);
+    return Observable.throw(error);
   }
 
 }
