@@ -6,11 +6,11 @@ import { StatisticComponent } from './statistic.component';
 
 describe('StatisticComponent', () => {
 
-    let component : StatisticComponent;
-    let fixture : ComponentFixture<StatisticComponent>;
-    let debugElement : DebugElement;
-    let element : HTMLElement;
-    
+    let component: StatisticComponent;
+    let fixture: ComponentFixture<StatisticComponent>;
+    let debugElement: DebugElement;
+    let element: HTMLElement;
+
     beforeEach(() => {
         TestBed.configureTestingModule({
             declarations: [
@@ -29,10 +29,10 @@ describe('StatisticComponent', () => {
     }));
 
     it('should contain a statistic with a value and statement', (() => {
-        component.value = "12345";
-        component.statement = "test";
+        component.value = '12345';
+        component.statement = 'test';
         fixture.detectChanges();
-        expect(element.textContent).toContain("12345");
-        expect(element.textContent).toContain("test");
+        expect(element.textContent).toContain('12345');
+        expect(element.textContent).toContain('test');
     }));
 });
