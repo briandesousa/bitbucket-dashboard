@@ -10,7 +10,7 @@ import { Repository } from './model/repository';
 export class AppComponent {
 
   title= 'Branch Banking Dashboard';
-  projectName = 'BBSALES';
+  projectName = 'BB';
   instructions = `This dashboard displays a list of Git repositories in the ${this.projectName} project in BitBucket.`;
 
   repositories: Repository[] = [
